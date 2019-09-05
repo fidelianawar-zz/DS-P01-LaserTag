@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+    CustomStringClass.cpp \
+    main.cpp
+
+HEADERS += \
+    main.h
