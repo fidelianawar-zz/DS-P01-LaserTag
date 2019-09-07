@@ -1,18 +1,17 @@
-#include "main.h"
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "team.h"
+#include "dsstring.h"
 
-using namespace std;
-
-int main(int argc, char* argv[])
+Team::Team()
 {
     ifstream inFile;
-    string line;
-    string teamName;
-    string numMembers;
-    string idNum;
-    string memberName;
+    DSString line;
+    DSString teamName;
+    DSString numMembers;
+    DSString idNum;
+    DSString memberName;
 
     inFile.open(argv[1]);
     if(!inFile.is_open()){
@@ -27,5 +26,4 @@ int main(int argc, char* argv[])
         getline(inFile, idNum, ' ');
         getline(inFile, memberName);
     }
-    return 0;
 }

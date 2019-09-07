@@ -1,5 +1,5 @@
-#ifndef DSSTRING
-#define DSSTRING
+#ifndef DSSTRING_H
+#define DSSTRING_H
 
 #include <iostream>
 #include <cstring>
@@ -35,4 +35,4 @@ public:
 
 };
 
-#endif
+#endif // DSSTRING_H
