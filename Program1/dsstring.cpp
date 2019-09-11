@@ -116,20 +116,12 @@ using namespace std;
  * b+ : count forward from a, b- : count backaward
  */
     DSString substring(int a, int b){
-        for(int i = 0; i < a; i++){
-            if (b < 0){
-                DSString sub =
-            }
-            else{
-
-            }
-        }
 
     }
 
 
     char* c_str(){
-
+        return data;
     }
 
     std:: ostream& operator<< (std::ostream& OS, const String& s){
@@ -137,4 +129,6 @@ using namespace std;
         return OS;
     }
 
+
 #endif
+    }

@@ -1,11 +1,31 @@
 #ifndef TEAM_H
 #define TEAM_H
+#include <dsstring.h>
+#include <fstream>
 
+using namespace std;
 
 class Team
 {
-public:
-    Team();
-};
+private:
 
+    ifstream inFile;
+
+    Team* teamA;
+    Team* teamB;
+    DSString* teamName;
+    int numPlayers;
+    int idNum;
+    DSString* memberName;
+    int* points;
+
+
+public:
+    void readTeamFile();
+    void readMatchFile();
+    int getSize();
+    Team();
+    void tagScoring();
+
+};
 #endif // TEAM_H
