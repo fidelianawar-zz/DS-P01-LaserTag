@@ -89,6 +89,8 @@ void readMatchFile(){
     char time[256];
     char area[1]; //area of tagging
     char areaSum[5];
+    char line[256];
+    cout<<"delete this";
     DSString taggerID();
 
     while(matchFile.getline())
