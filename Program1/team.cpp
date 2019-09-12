@@ -4,7 +4,8 @@
 #include "team.h"
 #include "dsstring.h"
 
-ifstream teamFile;
+ifstream teamFileA;
+ifstream teamFileB;
 ifstream matchFile;
 int numTags;
 int * tagArea;
@@ -17,10 +18,11 @@ int personTagged;
 int personTagging;
 Team * teamA;
 Team * teamB;
+Team * match;
 
 void readTeamAFile(){
-    teamFile.open("TeamA.txt");
-    if (!teamFile) {
+    teamFileA.open("TeamA.txt");
+    if (!teamFileA) {
         cerr << "Unable to open file datafile.txt";
         exit(1);   // call system to stop
     }
@@ -29,10 +31,10 @@ void readTeamAFile(){
     char numberA[3];
     char memInfoA[256];
 
-    while(teamFile.eof()) // To get you until end of fo;e
+    while(teamFileA.eof()) // To get you until end of fo;e
     {
-        teamFile.getline(nameA,256); //store team name
-        teamFile.getline(numberA, 3); //store # members
+        teamFileA.getline(nameA,256); //store team name
+        teamFileA.getline(numberA, 3); //store # members
         for(int i =0; i < atoi(numberA); i++){
             if(i == ' '){
 
@@ -44,12 +46,12 @@ void readTeamAFile(){
     DSString numMembersA(numberA);
     DSString teamMemberInfoA(memInfoA);
 
-    teamFile.close();
+    teamFileA.close();
 }
 
 void readTeamBFile(){
-    teamFile.open("TeamA.txt");
-    if (!teamFile) {
+    teamFileB.open("TeamB.txt");
+    if (!teamFileB) {
         cerr << "Unable to open file datafile.txt";
         exit(1);   // call system to stop
     }
@@ -58,10 +60,10 @@ void readTeamBFile(){
     char numberB[3];
     char memInfoB[256];
 
-    while(teamFile.eof()) // To get you until end of fo;e
+    while(teamFileB.eof()) // To get you until end of fo;e
     {
-        teamFile.getline(nameB,256); //store team name
-        teamFile.getline(numberB, 3); //store # members
+        teamFileB.getline(nameB,256); //store team name
+        teamFileB.getline(numberB, 3); //store # members
         for(int i =0; i < atoi(numberB); i++){
             if(i == ' '){
 
@@ -73,9 +75,8 @@ void readTeamBFile(){
     DSString numMembersB(numberB);
     DSString teamMemberInfoB(memInfoB);
 
-    teamFile.close();
+    teamFileB.close();
 }
-
 
 void readMatchFile(){
     matchFile.open("MatchFile.txt");
@@ -90,10 +91,7 @@ void readMatchFile(){
     char area[1]; //area of tagging
     char areaSum[5];
     char line[256];
-    cout<<"delete this";
-    DSString taggerID();
 
-    while(matchFile.getline())
     while(matchFile.eof()) // To get you until end of file
     {
 
