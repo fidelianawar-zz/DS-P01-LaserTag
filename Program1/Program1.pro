@@ -12,3 +12,6 @@ HEADERS += \
     dsstring.h \
     main.h \
     team.h
+
+DISTFILES += \
+    TeamA.txt

@@ -4,7 +4,8 @@
 #include "team.h"
 #include "dsstring.h"
 
-ifstream inFile;
+ifstream teamFile;
+ifstream matchFile;
 int numTags;
 int * tagArea;
 int backPoints = 5;
@@ -17,67 +18,101 @@ int personTagging;
 Team * teamA;
 Team * teamB;
 
-void readTeamFile(){
-    inFile.open("TeamA.txt");
-    if (!inFile) {
+void readTeamAFile(){
+    teamFile.open("TeamA.txt");
+    if (!teamFile) {
         cerr << "Unable to open file datafile.txt";
         exit(1);   // call system to stop
     }
 
-    char teamName[256];
-    char numMembers[3];
-    char teamMemberInfo[256];
-    while(inFile.eof()) // To get you until end of line
+    char nameA[256];
+    char numberA[3];
+    char memInfoA[256];
+
+    while(teamFile.eof()) // To get you until end of fo;e
     {
-        inFile.getline(teamName,256,'\n'); //store team name
-        inFile.getline(numMembers, 3,'\n');
-        //inFile.getline(teamMemberInfo, 2, " ");
+        teamFile.getline(nameA,256); //store team name
+        teamFile.getline(numberA, 3); //store # members
+        for(int i =0; i < atoi(numberA); i++){
+            if(i == ' '){
+
+            }
+        }
     }
-    inFile.close();
+
+    DSString teamNameA(nameA);
+    DSString numMembersA(numberA);
+    DSString teamMemberInfoA(memInfoA);
+
+    teamFile.close();
+}
+
+void readTeamBFile(){
+    teamFile.open("TeamA.txt");
+    if (!teamFile) {
+        cerr << "Unable to open file datafile.txt";
+        exit(1);   // call system to stop
+    }
+
+    char nameB[256];
+    char numberB[3];
+    char memInfoB[256];
+
+    while(teamFile.eof()) // To get you until end of fo;e
+    {
+        teamFile.getline(nameB,256); //store team name
+        teamFile.getline(numberB, 3); //store # members
+        for(int i =0; i < atoi(numberB); i++){
+            if(i == ' '){
+
+            }
+        }
+    }
+
+    DSString teamNameB(nameB);
+    DSString numMembersB(numberB);
+    DSString teamMemberInfoB(memInfoB);
+
+    teamFile.close();
 }
 
 
 void readMatchFile(){
-    inFile.open("MatchFile.txt");
-    if (!inFile) {
+    matchFile.open("MatchFile.txt");
+    if (!matchFile) {
         cerr << "Unable to open file datafile.txt";
         exit(1);   // call system to stop
     }
 
-    char taggerID[4];
-    char targetID[3];
-    char milliseconds[256];
-    char tagArea[1];
-    while(inFile.eof()) // To get you until end of line
+    char tagger[4];
+    char target[3];
+    char time[256];
+    char area[1]; //area of tagging
+    char areaSum[5];
+    DSString taggerID();
+
+    while(matchFile.getline())
+    while(matchFile.eof()) // To get you until end of file
     {
-        inFile.getline(taggerID,4,'\n'); //store team name
-        inFile.getline(targetID, 3,'\n');
-        inFile.getline(milliseconds, 2,'\n');
-        inFile.getline(tagArea, 1,'\n');
+
+        matchFile.getline(tagger,4); //store tagger name
+        matchFile.getline(target, 3);
+        matchFile.getline(time, 2);
+        matchFile.getline(area, 1);
     }
-    inFile.close();
+
+    //storing all the loaded values into DSString containers
+    DSString taggerID(tagger);
+    DSString targetID(target);
+    DSString milliseconds(time);
+    DSString tagArea(area);
+
+    matchFile.close();
 }
 
 void tagScoring(){
 
+
 }
-Team::Team()
-{
 
-      DSString line;
-      inFile.
-
-//    inFile.open(argv[1]);
-//    if(!inFile.is_open()){
-//        cout << "Could not open file";
-//        return -1;
-//    }
-
-//    getline(inFile, teamName, '\n');
-//    getline(inFile, numMembers, '\n');
-
-//    while(!inFile.eof()){
-//        getline(inFile, idNum, ' ');
-//        getline(inFile, memberName);
-}
 

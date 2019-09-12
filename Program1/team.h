@@ -21,7 +21,8 @@ private:
 
 
 public:
-    void readTeamFile();
+    void readTeamAFile();
+    void readTeamBFile();
     void readMatchFile();
     int getSize();
     Team();

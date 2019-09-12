@@ -120,15 +120,14 @@ using namespace std;
     }
 
 
-    char* c_str(){
-        return data;
-    }
+//    char* c_str(){
+//        return data;
+//    }
 
-    std:: ostream& operator<< (std::ostream& OS, const String& s){
+    std:: ostream& operator<< (std::ostream& OS, const DSString& s){
         OS << s.data;
         return OS;
     }
 
 
 #endif
-    }

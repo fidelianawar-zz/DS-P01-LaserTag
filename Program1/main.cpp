@@ -8,24 +8,14 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     ifstream inFile;
+    ofstream outFile;
     string line;
     string teamName;
     string numMembers;
     string idNum;
     string memberName;
 
-    inFile.open(argv[1]);
-    if(!inFile.is_open()){
-        cout << "Could not open file";
-        return -1;
-    }
+    inFile.open("TeamA.txt");
+    cout<<"successful";
 
-    getline(inFile, teamName, '\n');
-    getline(inFile, numMembers, '\n');
-
-    while(!inFile.eof()){
-        getline(inFile, idNum, ' ');
-        getline(inFile, memberName);
-    }
-    return 0;
 }
