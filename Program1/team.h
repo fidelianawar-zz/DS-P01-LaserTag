@@ -2,6 +2,7 @@
 #define TEAM_H
 #include <dsstring.h>
 #include <fstream>
+#include "player.h"
 
 using namespace std;
 
@@ -10,23 +11,23 @@ class Team
 private:
 
     ifstream inFile;
-
-    Team* teamA;
-    Team* teamB;
-    DSString* teamName;
+    DSString teamName;
     int numPlayers;
     int idNum;
     DSString* memberName;
     int* points;
 
+    //array of Players
+    Player *player;
+    int teamScore;
+
 
 public:
-    void readTeamAFile();
-    void readTeamBFile();
-    void readMatchFile();
-    int getSize();
+
     Team();
-    void tagScoring();
+    int getTeamSize(int size);
+    DSString getTeamName(DSString *name);
+
 
 };
 #endif // TEAM_H

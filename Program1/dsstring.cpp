@@ -115,14 +115,22 @@ using namespace std;
  * parameter b: num of char to copy into substring that is returned
  * b+ : count forward from a, b- : count backaward
  */
-    DSString substring(int a, int b){
+    DSString DSString::substring(int beg, int end){
+        if(beg >= 0 && end > beg){
+            char* temp = new char[end-beg+1];
+            int length = end - beg;
+            strncpy(temp, data, length);
+            DSString res(temp);
 
+            delete [] temp;
+            return res;
+        }
     }
 
 
-//    char* c_str(){
-//        return data;
-//    }
+    char* DSString::c_str(){
+        return data;
+    }
 
     std:: ostream& operator<< (std::ostream& OS, const DSString& s){
         OS << s.data;

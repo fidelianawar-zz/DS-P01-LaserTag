@@ -1,7 +1,6 @@
 #include "main.h"
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <team.cpp>
 
 int main(int argc, char* argv[])
