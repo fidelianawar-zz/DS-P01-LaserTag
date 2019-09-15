@@ -4,19 +4,20 @@
 
 class laserTag
 {
+private:
+    ifstream teamFileA;
+    ifstream teamFileB;
+
 public:
+
     laserTag();
-
-    Team * A;
-    Team * B;
-
-    void readTeamAFile();
-    void readTeamBFile();
+    void readTeamFile();
     void readMatchFile();
     void createVLowFile();
     void createVMedFile();
     void createVHighFile();
     void tagScoring();
+
 };
 
 #endif // LASERTAG_H

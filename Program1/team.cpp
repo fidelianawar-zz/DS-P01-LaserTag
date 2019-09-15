@@ -19,26 +19,26 @@ Team::Team(){
     teamName = "";
 }
 
-int getTeamSize(int size){
+int Team::getTeamSize(int size){
     return size;
 }
 
-void setTeamName(DSString name){
+void Team::setTeamName(DSString name){
     teamName = name;
 }
 
-DSString getTeamName(DSString name){
+DSString Team::getTeamName(DSString name){
     return name;
 }
 
-void setScore(int score){
+void Team::setScore(int score){
     teamScore = score;
 }
 
-int getScore(int score){
+int Team::getScore(int score){
     return score;
 }
-int incrementScore(int incrementSize){
+int Team::incrementScore(int incrementSize){
     return teamScore += incrementSize;
 }
 

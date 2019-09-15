@@ -3,7 +3,7 @@
 #include "dsstring.h"
 #include "player.h"
 
-class Player;
+using namespace std;
 
 Player::Player()
 {
@@ -12,4 +12,20 @@ Player::Player()
     tags = 0;
     playerScore = 0;
 }
+
+void Player::setPlayerName(DSString name){
+    playerName = name;
+}
+
+DSString Player::getPlayerName(){
+    return playerName;
+}
+void Player::setPlayerID(int id){
+    playerID = id;
+}
+
+int Player::getPlayerID(){
+    return playerID;
+}
+
 

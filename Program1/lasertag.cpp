@@ -4,36 +4,16 @@
 #include "team.h"
 #include "dsstring.h"
 
-
 ifstream matchFile;
+Player* teamA;
+Player* teamB;
 
-int numTags;
-int tagArea;
-
-//int backPoints = 5;
-//int chestPoints = 8;
-//int shoulderPoints = 7;
-//int laser = 4;
-
-int milliseconds;
-int personTagged;
-int personTagging;
-
-Team * teamA;
-Team * teamB;
-Team * match;
-
-laserTag::laserTag()
-{
-    numTags = 0;
-    milliseconds = 0;
-    personTagged = 0;
-    personTagging = 0;
+laserTag::laserTag(){
+    teamA = nullptr;
+    teamB = nullptr;
 }
 
-void readTeamFile(){
-
-    ifstream teamFileA;
+void laserTag::readTeamFile(){
 
     teamFileA.open("TeamA.txt");
     if (!teamFileA) {
@@ -50,9 +30,8 @@ void readTeamFile(){
     teamFileA.getline(teamNameA,256); //store team name
     teamFileA >> numLinesA;//store # members
 
-
-     int *playerID = new int[numLinesA];
-     DSString *playerName = new DSString[numLinesA];
+    int *playerID = new int[numLinesA];
+    DSString *playerName = new DSString[numLinesA];
 
     for(int i =0; i < numLinesA; i++){
         teamFileA >> ID;
@@ -61,13 +40,17 @@ void readTeamFile(){
         playerID[i] = ID;
     }
 
-    DSString teamA(teamNameA);
+    DSString nameA(teamNameA);
 
     teamFileA.close();
 
-    //--------------------------------------------------------------------
+    teamA = new Player[numLinesA];
+    for(int i = 0; i < numLinesA; i++){
+        teamA[i].setPlayerName(playerName[i]);
+        teamA->setPlayerID(playerID[i]);
+    }
 
-    ifstream teamFileB;
+    //--------------------------------------------------------------------
 
     teamFileB.open("TeamB.txt");
     if (!teamFileB) {
@@ -82,7 +65,7 @@ void readTeamFile(){
     int IDb;
 
     teamFileB.getline(teamNameB,256); //store team name
-    teamFileB >> numLinesB;//store # members
+    teamFileB >> numLinesB; //store # members
 
      int *playerIDB = new int[numLinesB];
      DSString *playerNameB = new DSString[numLinesB];
@@ -92,13 +75,23 @@ void readTeamFile(){
         teamFileB >> playerNameBufferB;
         playerNameB[i] = playerNameBufferB;
         playerIDB[i] = IDb;
+        //cout << playerIDB[i] << endl;
     }
 
-    DSString teamB(teamNameB);
+    DSString nameB(teamNameB);
 
     teamFileB.close();
+
+    teamB = new Player[numLinesB];
+    for(int i = 0; i < numLinesB; i++){
+        teamB[i].setPlayerName(playerNameB[i]);
+        teamB->setPlayerID(playerIDB[i]);
+        cout << teamB[i].getPlayerID() << endl;
+    }
 }
 
+//get input from match file
+//compare IDs from input in match file to team player ID - tagging system
 
 void readMatchFile(){
     matchFile.open("MatchFile.txt");
@@ -124,10 +117,6 @@ void readMatchFile(){
     matchFile.close();
 }
 
-void populateTeam(){
-    Team A = new Player[numLinesA]
-}
-
 void tagScoring(){
 
 
@@ -143,6 +132,3 @@ void createVMedFile(){
 void createVHighFile(){
 
 }
-
-
-

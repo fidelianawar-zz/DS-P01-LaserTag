@@ -9,24 +9,19 @@ using namespace std;
 class Team
 {
 private:
-
-    ifstream inFile;
-    DSString teamName;
-    int numPlayers;
-    int idNum;
-    DSString* memberName;
-    int* points;
-
     //array of Players
     Player *player;
     int teamScore;
-
 
 public:
 
     Team();
     int getTeamSize(int size);
-    DSString getTeamName(DSString *name);
+    void setTeamName(DSString name);
+    DSString getTeamName(DSString name);
+    void setScore(int score);
+    int getScore(int score);
+    int incrementScore(int incrementSize);
 
 
 };

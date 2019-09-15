@@ -30,9 +30,10 @@ using namespace std;
     }
 
     // DSString& operator= (const char*);
-    DSString& DSString::operator=(const char *r){
-        *data = *r;
-        return *this;
+    DSString& DSString::operator=(const char* r){
+       data = new char(strlen(r)+1);
+       strcpy(data,r);
+       return *this;
     }
 
     // DSString& operator= (const DSString&);
