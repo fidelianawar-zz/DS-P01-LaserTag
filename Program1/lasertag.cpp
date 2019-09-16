@@ -228,7 +228,7 @@ int laserTag::compareIDs(int numTags, int *taggerID, int *tagLocations){
 //creation of low verbosity file
 void laserTag::createVLowFile(char* input){
     ofstream outputFileVLow;
-    outputFileVLow.open("OutputFile.txt");
+    outputFileVLow.open("/home/student/Desktop/CSE2341-F19-Fidelia-Nawar/Sprint1/build-Program1-Desktop_Qt_5_10_0_GCC_64bit-Debug");
 
     //alphabetizing team name display info
     if(nameA < nameB){
@@ -253,7 +253,7 @@ void laserTag::createVLowFile(char* input){
 
 void laserTag::createVMedFile(){
     ofstream outputFileVMed;
-    outputFileVMed.open("OutputFile.txt");
+    outputFileVMed.open("/home/student/Desktop/CSE2341-F19-Fidelia-Nawar/Sprint1/build-Program1-Desktop_Qt_5_10_0_GCC_64bit-Debug");
     outputFileVMed << nameA << endl;
 
     int teamASize = ATeam.getTeamSize();
