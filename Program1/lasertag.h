@@ -10,13 +10,24 @@ private:
 
 public:
 
+    int *playerIDA;
+    int *playerIDB;
+
+    Team ATeam;
+    Team BTeam;
+
+    int teamScore;
+
     laserTag();
-    void readTeamFile();
+    void readTeamAFile();
+    void readTeamBFile();
     void readMatchFile();
-    void createVLowFile();
+    int compareIDs(int tags, int *tagger, int *tagLocation);
+    void createVLowFile(char *arg);
     void createVMedFile();
     void createVHighFile();
     void tagScoring();
+    void incrementScore(int incrementSize);
 
 };
 

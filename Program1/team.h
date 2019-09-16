@@ -11,17 +11,24 @@ class Team
 private:
     //array of Players
     Player *player;
-    int teamScore;
+    int teamScoreA;
+    int teamScoreB;
+
+
 
 public:
 
+    int size;
+    DSString name;
+    int score;
+
     Team();
-    int getTeamSize(int size);
+    int getTeamSize();
     void setTeamName(DSString name);
-    DSString getTeamName(DSString name);
+    DSString getTeamName();
     void setScore(int score);
-    int getScore(int score);
-    int incrementScore(int incrementSize);
+    int getScore();
+    int incrementScore(int incrementAmount);
 
 
 };

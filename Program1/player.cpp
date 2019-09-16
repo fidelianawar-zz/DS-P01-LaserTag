@@ -27,5 +27,11 @@ void Player::setPlayerID(int id){
 int Player::getPlayerID(){
     return playerID;
 }
+void Player::setPlayerTag(int playerTag){
+    tags = playerTag;
+}
+int Player::getPlayerTag(){
+    return tags;
+}
 
 

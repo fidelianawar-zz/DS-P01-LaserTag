@@ -6,7 +6,6 @@ CONFIG -= qt
 SOURCES += \
     dsstring.cpp \
     lasertag.cpp \
-    main.cpp \
     player.cpp \
     team.cpp
 
