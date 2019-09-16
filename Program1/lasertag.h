@@ -28,8 +28,8 @@ public:
     void readMatchFile();
     int compareIDs(int tags, int *tagger, int *tagLocation);
     void createVLowFile(char *arg);
-    void createVMedFile();
-    void createVHighFile();
+    void createVMedFile(char *arg);
+    void createVHighFile(char *arg);
     void tagScoring();
     void incrementScore(int incrementSize);
 

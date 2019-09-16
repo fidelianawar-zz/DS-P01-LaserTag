@@ -1,8 +1,8 @@
-#include "lasertag.h"
 #include <iostream>
 #include <fstream>
 #include "team.h"
 #include "dsstring.h"
+#include "lasertag.h"
 
 ifstream teamAFile;
 ifstream teamBFile;
@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
                    newGame.createVLowFile(argv[4]);
                }
                else if(argv[5][1], 'm'){
-                   newGame.createVMedFile();
+                   newGame.createVMedFile(argv[4]);
                }
                else if(argv[5][1], 'h'){
-                   newGame.createVHighFile();
+                   newGame.createVHighFile(argv[4]);
                }
            }
        }
@@ -169,7 +169,7 @@ void laserTag::readMatchFile(){
 
     matchFile.close();
 
-    //calling method to cmpare tagger vs player ID
+    //calling method to compare tagger vs player ID
     compareIDs(numTags, taggerID, tagLocations);
 }
 
@@ -191,7 +191,6 @@ int laserTag::compareIDs(int numTags, int *taggerID, int *tagLocations){
                 teamAscore += tagLocation2;
             }
             else if(tagLocations[i] == 3){
-                cout << "here?";
                 teamAscore += tagLocation3;
             }
             else if(tagLocations[i] == 4){
@@ -203,19 +202,15 @@ int laserTag::compareIDs(int numTags, int *taggerID, int *tagLocations){
         else if(taggerID[i] ==  teamB[i].getPlayerID()){
             if(tagLocations[i] == 1){
                 teamBscore += tagLocation1;
-                 cout << "increased B score by 5" << endl;
             }
             else if(tagLocations[i] == 2){
                 teamBscore += tagLocation2;
-                 cout << "increased B score by 8" << endl;
             }
             else if(tagLocations[i] == 3){
                 teamBscore += tagLocation3;
-                 cout << "increased B score by 7" << endl;
             }
             else if(tagLocations[i] == 4){
                 teamBscore += tagLocation4;
-                 cout << "increased B score by 4" << endl;
             }
         }
     }
@@ -228,7 +223,7 @@ int laserTag::compareIDs(int numTags, int *taggerID, int *tagLocations){
 //creation of low verbosity file
 void laserTag::createVLowFile(char* input){
     ofstream outputFileVLow;
-    outputFileVLow.open("/home/student/Desktop/CSE2341-F19-Fidelia-Nawar/Sprint1/build-Program1-Desktop_Qt_5_10_0_GCC_64bit-Debug");
+    outputFileVLow.open(input);
 
     //alphabetizing team name display info
     if(nameA < nameB){
@@ -251,9 +246,9 @@ void laserTag::createVLowFile(char* input){
     outputFileVLow.close();
 }
 
-void laserTag::createVMedFile(){
+void laserTag::createVMedFile(char* input){
     ofstream outputFileVMed;
-    outputFileVMed.open("/home/student/Desktop/CSE2341-F19-Fidelia-Nawar/Sprint1/build-Program1-Desktop_Qt_5_10_0_GCC_64bit-Debug");
+    outputFileVMed.open(input);
     outputFileVMed << nameA << endl;
 
     int teamASize = ATeam.getTeamSize();
@@ -267,6 +262,6 @@ void laserTag::createVMedFile(){
     }
 
 }
-void laserTag::createVHighFile(){
+void laserTag::createVHighFile(char* input){
 
 }

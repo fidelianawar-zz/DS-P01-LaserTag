@@ -12,7 +12,6 @@ SOURCES += \
 HEADERS += \
     dsstring.h \
     lasertag.h \
-    main.h \
     player.h \
     team.h
 
