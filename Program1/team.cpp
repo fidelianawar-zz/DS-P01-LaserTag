@@ -10,8 +10,6 @@ Player *team1;
 Player *team2;
 DSString teamName;
 
-//how many players on team
-int count;
 int teamScore;
 int incrementVal;
 

@@ -18,10 +18,6 @@ public:
 
     DSString nameA;
     DSString nameB;
-
-
-    int teamScore;
-
     laserTag();
     void readTeamAFile();
     void readTeamBFile();
@@ -30,8 +26,6 @@ public:
     void createVLowFile(char *arg);
     void createVMedFile(char *arg);
     void createVHighFile(char *arg);
-    void tagScoring();
-    void incrementScore(int incrementSize);
 
 };
 
