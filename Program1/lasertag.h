@@ -16,6 +16,10 @@ public:
     Team ATeam;
     Team BTeam;
 
+    DSString nameA;
+    DSString nameB;
+
+
     int teamScore;
 
     laserTag();

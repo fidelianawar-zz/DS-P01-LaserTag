@@ -12,7 +12,6 @@ DSString teamName;
 
 //how many players on team
 int count;
-
 int teamScore;
 int incrementVal;
 
@@ -21,6 +20,7 @@ Team::Team(){
     teamName = "";
 }
 
+//returns size of team
 int Team::getTeamSize(){
     return size;
 }
@@ -40,6 +40,8 @@ void Team::setScore(int score){
 int Team::getScore(){
     return teamScore;
 }
+
+//equating hit location values to point values
 int Team::incrementScore(int position){
     if(position == 1){
         incrementVal = 5;

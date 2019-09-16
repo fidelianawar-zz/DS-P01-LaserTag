@@ -13,6 +13,7 @@ Player::Player()
     playerScore = 0;
 }
 
+//setting name of player
 void Player::setPlayerName(DSString name){
     playerName = name;
 }
@@ -20,6 +21,8 @@ void Player::setPlayerName(DSString name){
 DSString Player::getPlayerName(){
     return playerName;
 }
+
+//setting ID of player
 void Player::setPlayerID(int id){
     playerID = id;
 }
@@ -27,9 +30,12 @@ void Player::setPlayerID(int id){
 int Player::getPlayerID(){
     return playerID;
 }
+
+//setting # of tags player has
 void Player::setPlayerTag(int playerTag){
     tags = playerTag;
 }
+
 int Player::getPlayerTag(){
     return tags;
 }

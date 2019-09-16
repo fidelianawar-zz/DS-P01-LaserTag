@@ -128,7 +128,7 @@ using namespace std;
         }
     }
 
-
+    //simply returns data
     char* DSString::c_str(){
         return data;
     }

@@ -14,8 +14,6 @@ private:
     int teamScoreA;
     int teamScoreB;
 
-
-
 public:
 
     int size;
